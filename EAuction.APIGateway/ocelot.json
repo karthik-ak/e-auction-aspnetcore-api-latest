@@ -1,0 +1,198 @@
+{
+  "Routes": [
+    {
+      //Producst API
+      "DownstreamPathTemplate": "/api/v1/Products/CreateProduct",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 36886
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/add-product",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Products/GetProductsUploadedBy/{emailId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 36886
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/get-products/{emailId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Products/GetAllProducts",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 36886
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/get-all-products",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Products/GetProduct/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 36886
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/get-product/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Products/UpdateProduct",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 36886
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/update",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Products/DeleteProduct/{productId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 36886
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/delete/{productId}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    //-Bid API
+    {
+      "DownstreamPathTemplate": "/api/v1/Bid/PlaceBid",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59655
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/buyer/place-bid",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Bid/GetBids/{productId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59655
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/show-bids/{productId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Bid/GetBid/{productId}/{buyerEmailId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59655
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/seller/show-bid/{productId}/{buyerEmailId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Bid/UpdateBid/{productId}/{buyerEmailId}/{newBidAmount}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59655
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/buyer/update-bid/{productId}/{buyerEmailId}/{newBidAmount}",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Bid/AcceptBid",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59655
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/buyer/accept-bid",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Bid/RejectBid",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59655
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eauction_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/e-auction/api/v1/buyer/reject-bid",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+
+  eauctiondb:
+    image: mongo
+
+  rabbitmq:
+    image: rabbitmq:3-management
+
+  eauctionsqldb:
+    image: mcr.microsoft.com/mssql/server
+
+  eauction.products.api:
+    image: ${DOCKER_REGISTRY-}eauctionproductsapi
+    build:
+      context: .
+      dockerfile: EAuction.Products.Api/Dockerfile
+
+  eauction.sourcing.api:
+    image: ${DOCKER_REGISTRY-}eauctionsourcingapi
+    build:
+      context: .
+      dockerfile: EAuction.Sourcing.Api/Dockerfile
+
+
+  eauction.order.webapi:
+    image: ${DOCKER_REGISTRY-}eauctionorderwebapi
+    build:
+      context: .
+      dockerfile: EAuction.Order.WebApi/Dockerfile
+
+
+  eauction.apigateway:
+    image: ${DOCKER_REGISTRY-}eauctionapigateway
+    build:
+      context: .
+      dockerfile: EAuction.APIGateway/Dockerfile
+
